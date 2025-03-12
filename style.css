@@ -17,7 +17,10 @@
   body {
     margin: 0;
     height: 100vh;   
-    font-family: "Poppins";    
+    font-family: "Poppins";   
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between;
   }
 
   header { 
@@ -31,5 +34,15 @@
 
   a {
     text-decoration: none;
+    color: white;
+  }
+
+  footer {
+    padding: 3rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    letter-spacing: 2px;
     color: white;
   }
