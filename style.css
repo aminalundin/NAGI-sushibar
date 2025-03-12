@@ -37,6 +37,19 @@
     color: white;
   }
 
+  a:hover {
+    color: #D12A2A;
+  }
+
+  main {
+    display: flex;
+    justify-content: center;
+  }
+
+  main img {
+    width: 400px;
+  }
+
   footer {
     padding: 3rem;
     display: flex;
