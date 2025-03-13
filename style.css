@@ -122,7 +122,12 @@
         color: #190600;
     }
 
+    /* BOOKING PAGE ------------------------------ */
 
+    .main-booking {
+        display: flex;
+        flex-direction: row;
+    }
 
 
 
