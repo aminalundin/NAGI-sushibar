@@ -17,24 +17,44 @@
     </header>
     <main class="main-booking">
 
-        <!-- BOOKIKNG FORM FROM CHATGPT -->
+        <div class="store"></div>
+
+        <!-- BOOKIKNG FORM FROM CHATGPT AND MY OWN CODE-->
         <div class="booking-container">
+            <div class="address-container">
+                <img src="/images/2.png" alt="">
+                <p class="address">
+                    123 Maple Avenue <br>
+                    Riverside, NY 10580 <br>
+                    USA</p>
+            </div>
 
-            <label for="date">Select a Date:</label>
-            <input type="date" id="date" min="" required>
+            <div class="booking">
+                <label for="date">SELECT A DATE</label>
+                <input type="date" id="date" min="" required>
+            </div>
 
-            <label for="time">Select a Time:</label>
-            <select id="time"></select>
+            <div class="booking">
+                <label for="time">SELECT A TIME:</label>
+                <select id="time"></select>
+            </div>
 
-            <label for="people">Number of People:</label>
-            <select id="people">
-                <option value="1">1 Person</option>
-                <option value="2">2 People</option>
-                <option value="3">3 People</option>
-                <option value="4">4 People</option>
-                <option value="5">5 People</option>
-                <option value="6">6 People</option>
-            </select>
+            <div class="booking">
+                <label for="people">NUMBER OF PEOPLE:</label>
+                <select id="people">
+                    <option value="1">1 Person</option>
+                    <option value="2">2 People</option>
+                    <option value="3">3 People</option>
+                    <option value="4">4 People</option>
+                    <option value="5">5 People</option>
+                    <option value="6">6 People</option>
+                </select>
+            </div>
+
+            <input type="text" placeholder="Full name">
+            <input type="email" placeholder="Email">
+            <input type="text" placeholder="Phone number">
+
 
             <button id="book">Book Now</button>
         </div>

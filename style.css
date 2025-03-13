@@ -38,18 +38,19 @@
         transform: translateY(-100%);
         animation: slideIn 0.8s ease-out forwards;
     }
-    
+
     @keyframes slideIn {
         from {
             transform: translateY(-100%);
             opacity: 0;
         }
+
         to {
             transform: translateY(0);
             opacity: 1;
         }
     }
-    
+
 
     a {
         text-decoration: none;
@@ -127,11 +128,75 @@
     .main-booking {
         display: flex;
         flex-direction: row;
+        height: 100vh;
+        gap: 30px;
+    }
+
+    .store {
+        background-image: url(/images/store.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 60%;
+        position: relative;
+        transform: translateX(-100%);
+        animation: slideInLeft 1s ease-out forwards;
+    }
+
+    @keyframes slideInLeft {
+        from {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    .booking-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .booking-container img {
+        width: 50px;
+    }
+
+    .address {
+        padding: 0;
+        margin: 0;
+    }
+
+    .address-container {
+        padding-bottom: 2rem;
+    }
+
+    input {
+        font-family: "Poppins";
+        height: 30px;
+        width: 300px;
+        border: 1px solid black;
+        padding: 5px;
+    }
+
+    .booking {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 10px;
     }
 
 
-
-
+    #book {
+        height: 40px;
+        font-family: "Poppins";
+        background-color: #190600;
+        color: white;
+        border: none;
+        font-size: 12pt;
+    }
 }
 
 
