@@ -68,11 +68,9 @@
 
     <!-- SCRIPT FOR BOOKING FORM FROM CHATGPT -->
     <script>
-        // Set minimum date to today
         const today = new Date().toISOString().split("T")[0];
         document.getElementById("date").setAttribute("min", today);
 
-        // Populate time dropdown (17:00 - 23:00)
         const timeSelect = document.getElementById("time");
         for (let hour = 17; hour <= 23; hour++) {
             const option = document.createElement("option");
@@ -81,7 +79,6 @@
             timeSelect.appendChild(option);
         }
 
-        // Handle booking
         document.getElementById("book").addEventListener("click", function () {
             const selectedDate = document.getElementById("date").value;
             const selectedTime = timeSelect.value;
@@ -95,8 +92,6 @@
             alert(`Booking confirmed for ${selectedDate} at ${selectedTime} for ${selectedPeople} people!`);
         });
     </script>
-
-
 
 </body>
 
