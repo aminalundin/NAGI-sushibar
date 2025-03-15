@@ -275,7 +275,8 @@
     .about-container {
         display: flex;
         align-items: center;
-        justify-content: center;
+        /* justify-content: center; */
+        flex-direction: column;
         /* background-image: url(/images/about-bg.jpg);
         background-position: center;
         background-repeat: no-repeat;
@@ -292,6 +293,22 @@
 
     .about-content h1 {
         letter-spacing: 2px;
+    }
+
+    .about-container h2 {
+        letter-spacing: 2px;
+        color: #594B43;
+        padding-top: 3rem;
+    }
+
+    .socials {
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+    }
+
+    .socials img {
+        width: 30px;
     }
 }
 
