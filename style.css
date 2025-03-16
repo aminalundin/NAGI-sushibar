@@ -17,7 +17,7 @@
 
     body {
         margin: 0;
-        height: 100vh;
+        min-height: 100vh;
         font-family: "Poppins";
         display: flex;
         flex-direction: column;
@@ -103,7 +103,7 @@
     }
 
     .menu-main {
-        height: 100vh;
+        min-height: 100vh;
         background-image: url(/images/menu-bg.jpg);
         background-position: center;
         background-repeat: no-repeat;
@@ -126,7 +126,7 @@
     .main-booking {
         display: flex;
         flex-direction: row;
-        height: 100vh;
+        min-height: 100vh;
         gap: 30px;
     }
 
@@ -202,7 +202,7 @@
     .about-header {
         box-sizing: border-box;
         padding-top: 2rem;
-        width: 100vw;
+        min-width: 100vw;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -218,7 +218,7 @@
         width: 100%;
         top: 0;
         left: 0;
-        height: 100vh;
+        min-height: 100vh;
         z-index: -1;
     }
 
