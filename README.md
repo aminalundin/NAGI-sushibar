@@ -1,5 +1,5 @@
 ### NAGI sushi bar website
-NAGI sushi bar is a front-end-focused restaurant website built using Vanilla JavaScript. The project was designed in Figma and developed for desktop viewing.
+NAGI sushi bar is a front-end-focused restaurant website built using Vanilla JavaScript. The project was designed in Figma and developed for desktop and mobile viewing.
 
 ## Running the project
 Clone this repository: https://github.com/aminalundin/Nagi-sushibar.git
@@ -19,6 +19,4 @@ Web UI/UX – Designed using Figma.
 Vanilla JavaScript 
 
 ## Future improvements
-Add mobile responsiveness
-Implement more animations
 Improve accessibility

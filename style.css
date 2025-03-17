@@ -3,7 +3,65 @@
     src: url(/fonts/Poppins-ExtraLight.ttf);
 }
 
+@keyframes slideIn {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes imageFade {
+
+    0%,
+    20% {
+        opacity: 1;
+    }
+
+    30%,
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInMenu {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* DESKTOP STYLING ------------------------------------------------- */
 @media screen and (min-width: 480px) {
+
+    .home-button {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: none;
+    }
 
     #background-video {
         position: absolute;
@@ -22,6 +80,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        background-color: #F2F0E7;
     }
 
     header {
@@ -36,18 +95,6 @@
         position: relative;
         transform: translateY(-100%);
         animation: slideIn 0.8s ease-out forwards;
-    }
-
-    @keyframes slideIn {
-        from {
-            transform: translateY(-100%);
-            opacity: 0;
-        }
-
-        to {
-            transform: translateY(0);
-            opacity: 1;
-        }
     }
 
     a {
@@ -80,7 +127,11 @@
         color: white;
     }
 
-    /* MENU PAGE ----------------------------------- */
+    /* MENU PAGE --------------------------------------------------- */
+
+    .mobile-main-menu {
+        display: none;
+    }
 
     .menu-header {
         padding: 2rem;
@@ -103,16 +154,16 @@
     }
 
     .menu-main {
-        min-height: 100vh;
+        height: 100vh;
         background-image: url(/images/menu-bg.jpg);
         background-position: center;
         background-repeat: no-repeat;
-        background-size: contain;
+        background-size: cover;
         z-index: 0;
     }
 
     .menu-footer {
-        padding: 2rem;
+        padding: 1rem;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -121,12 +172,11 @@
         color: #190600;
     }
 
-    /* BOOKING PAGE ----------------------------------- */
+    /* BOOKING PAGE ------------------------------------------------ */
 
     .main-booking {
         display: flex;
         flex-direction: row;
-        min-height: 100vh;
         gap: 30px;
     }
 
@@ -139,18 +189,6 @@
         position: relative;
         transform: translateX(-100%);
         animation: slideInLeft 1s ease-out forwards;
-    }
-
-    @keyframes slideInLeft {
-        from {
-            transform: translateX(-100%);
-            opacity: 0;
-        }
-
-        to {
-            transform: translateX(0);
-            opacity: 1;
-        }
     }
 
     .booking-container {
@@ -177,8 +215,15 @@
         font-family: "Poppins";
         height: 30px;
         width: 300px;
-        border: 1px solid black;
+        border: none;
         padding: 5px;
+    }
+
+    select {
+        font-family: "Poppins";
+        height: 30px;
+        width: 300px;
+        border: none;
     }
 
     .booking {
@@ -197,7 +242,7 @@
     }
 
 
-    /* ABOUT US PAGE  -------------------------------*/
+    /* ABOUT US PAGE  -----------------------------------------------*/
 
     .about-header {
         box-sizing: border-box;
@@ -218,7 +263,11 @@
         width: 100%;
         top: 0;
         left: 0;
-        min-height: 100vh;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
         z-index: -1;
     }
 
@@ -227,6 +276,7 @@
         width: 100%;
         height: 100%;
         opacity: 0;
+        object-fit: cover;
         animation: imageFade 5s infinite;
     }
 
@@ -248,11 +298,6 @@
 
     .image-container img:nth-child(5) {
         animation-delay: 4s;
-    }
-
-    @keyframes imageFade {
-        0%, 20% { opacity: 1; }  
-        30%, 100% { opacity: 0; } 
     }
 
     .about-container {
@@ -290,7 +335,80 @@
     }
 }
 
+/* MOBILE STYLING -------------------------------------------------- */
+
 @media screen and (max-width: 480px) {
+
+    header {
+        display: none;
+    }
+
+    footer {
+        display: none;
+    }
+
+    .mobile-menu {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100dvh;
+        width: 100vw;
+        background-color: #F2F0E7;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-100%);
+        transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+        z-index: 20;
+    }
+
+    .mobile-menu.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .mobile-menu a {
+        color: #594B43;
+        text-decoration: none;
+        font-size: 24pt;
+        display: flex;
+        flex-direction: column;
+        margin: 40px;
+    }
+
+    .home-button {
+        margin: 30px;
+        border: none;
+        position: absolute;
+        z-index: 10;
+        background-color: transparent;
+    }
+
+    .home-button img {
+        width: 30px;
+    }
+
+    .active-menu-button {
+        background-color: transparent;
+        margin: 30px;
+        border: none;
+    }
+
+    .active-menu-button img {
+        width: 30px;
+    }
+
+    body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "Poppins";
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: #F2F0E7;
+    }
+
+    /* HOME PAGE --------------------------------------------------- */
 
     #background-video {
         position: absolute;
@@ -302,22 +420,185 @@
         z-index: -1;
     }
 
-    body {
-        margin: 0;
-        min-height: 100vh;
-        font-family: "Poppins";
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
 
     main {
         display: flex;
         justify-content: center;
+        align-items: center;
+        height: 100vh;
+        /* position: relative; */
     }
 
     main img {
         width: 250px;
     }
 
+
+    /* BOOKING PAGE ------------------------------------------------ */
+
+
+    .main-booking {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        gap: 30px;
+        position: relative;
+        background-color: #F2F0E7;
+    }
+
+    .store {
+        width: 100%;
+        height: 60vh;
+        background-image: url(/images/store.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        animation: slideInLeft 1s ease-out forwards;
+    }
+
+    .booking-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+        padding-top: 20px;
+        padding-bottom: 3rem;
+    }
+
+    .booking-container img {
+        width: 50px;
+    }
+
+    .address {
+        padding: 0;
+        margin: 0;
+    }
+
+    .address-container {
+        padding-bottom: 2rem;
+    }
+
+    input {
+        font-family: "Poppins";
+        height: 30px;
+        width: 300px;
+        border: none;
+        padding: 5px;
+    }
+
+    select {
+        font-family: "Poppins";
+        height: 30px;
+        width: 300px;
+        border: none;
+    }
+
+    .booking {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 10px;
+    }
+
+    #book {
+        height: 40px;
+        font-family: "Poppins";
+        background-color: #190600;
+        color: white;
+        border: none;
+        font-size: 12pt;
+    }
+
+
+    /* MENU PAGE --------------------------------------------------- */
+
+    .menu-main {
+        display: none;
+    }
+
+    .mobile-main-menu {
+        background-image: url(/images/m-menu-bg.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh;
+        width: 100vw;
+        overflow: hidden;
+    }
+
+    /* ABOUT PAGE -------------------------------------------------- */
+
+    .image-container {
+        position: relative;
+        width: 100%;
+        height: 60vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        z-index: -1;
+    }
+
+    .image-container img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        object-fit: cover;
+        animation: imageFade 5s infinite;
+    }
+
+    .image-container img:nth-child(1) {
+        animation-delay: 0s;
+    }
+
+    .image-container img:nth-child(2) {
+        animation-delay: 1s;
+    }
+
+    .image-container img:nth-child(3) {
+        animation-delay: 2s;
+    }
+
+    .image-container img:nth-child(4) {
+        animation-delay: 3s;
+    }
+
+    .image-container img:nth-child(5) {
+        animation-delay: 4s;
+    }
+
+    .about-container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .about-content {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        width: 70%;
+        text-align: justify;
+        color: #594B43;
+    }
+
+    .about-content h1 {
+        letter-spacing: 2px;
+    }
+
+    .about-container h2 {
+        letter-spacing: 2px;
+        color: #594B43;
+        padding-top: 3rem;
+    }
+
+    .socials {
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+    }
+
+    .socials img {
+        width: 30px;
+    }
 }

@@ -9,17 +9,35 @@
 </head>
 
 <body>
+
+    <button onclick="displayMenu()" class="home-button">
+        <img src="/images/burg-menu.png" alt="">
+    </button>
+
+    <div class="mobile-menu">
+
+        <button onclick="displayMenu()" class="active-menu-button">
+            <img src="/images/burg-menu-brown.png" alt="">
+        </button>
+
+        <a href="booking.html">BOOK A TABLE</a>
+        <a href="menu.html">OUR MENU</a>
+        <a href="about.html">ABOUT NAGI</a>
+        <a href="index.html">HOME</a>
+
+    </div>
+
     <header class="menu-header">
         <a href="index.html">HOME</a>
         <a href="booking.html">BOOK A TABLE</a>
         <a href="menu.html">OUR MENU</a>
         <a href="about.html">ABOUT NAGI</a>
     </header>
+
     <main class="main-booking">
 
         <div class="store"></div>
 
-        <!-- BOOKIKNG FORM FROM CHATGPT AND MY OWN CODE-->
         <div class="booking-container">
             <div class="address-container">
                 <img src="/images/2.png" alt="">
@@ -55,7 +73,6 @@
             <input type="email" placeholder="Email">
             <input type="text" placeholder="Phone number">
 
-
             <button id="book">Book Now</button>
         </div>
 
@@ -66,32 +83,7 @@
         <p>ESTABLISHED 2023</p>
     </footer>
 
-    <!-- SCRIPT FOR BOOKING FORM FROM CHATGPT -->
-    <script>
-        const today = new Date().toISOString().split("T")[0];
-        document.getElementById("date").setAttribute("min", today);
-
-        const timeSelect = document.getElementById("time");
-        for (let hour = 17; hour <= 23; hour++) {
-            const option = document.createElement("option");
-            option.value = `${hour}:00`;
-            option.textContent = `${hour}:00`;
-            timeSelect.appendChild(option);
-        }
-
-        document.getElementById("book").addEventListener("click", function () {
-            const selectedDate = document.getElementById("date").value;
-            const selectedTime = timeSelect.value;
-            const selectedPeople = document.getElementById("people").value;
-
-            if (!selectedDate) {
-                alert("Please select a date.");
-                return;
-            }
-
-            alert(`Booking confirmed for ${selectedDate} at ${selectedTime} for ${selectedPeople} people!`);
-        });
-    </script>
+    <script src="script.js"></script>
 
 </body>
 
